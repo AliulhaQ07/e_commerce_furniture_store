@@ -110,9 +110,9 @@ const Header = () => {
           className="flex justify-center items-center gap-1"
           variants={linkVariants}
           initial="hidden"
-          animate="visible"
+          animate="visible "
         >
-          {/*rendering icons*/}
+          {/*rendering icons here*/}
           <CustomIconDesign icon={CiSearch} />
           <CustomIconDesign icon={CiShoppingCart} />
           {/*rendering button*/}
