@@ -1,6 +1,6 @@
 import React from "react";
 
 const Products = () => {
-  return <div>Products</div>;
+  return <div className="h-screen bg-green-600">Products</div>;
 };
 export default Products;

@@ -4,7 +4,8 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import CustomButton from "../components/CustomButton.jsx";
 import CustomIconDesign from "../components/CustomIconDesign.jsx";
-import { NavLink } from "react-router-dom"; // Import NavLink for active state
+import { Link } from "react-router-dom";
+
 const navLinks = [
   {
     id: 1,
@@ -14,17 +15,17 @@ const navLinks = [
   {
     id: 2,
     name: "Products",
-    url: "/",
+    url: "/products",
   },
   {
     id: 3,
     name: "Sales",
-    url: "/",
+    url: "/sales",
   },
   {
     id: 4,
     name: "Contact",
-    url: "/",
+    url: "/contact",
   },
 ];
 
@@ -36,40 +37,39 @@ const Header = () => {
     console.log("clicking on that hamburger button");
   };
 
-  // Animation variants for hamburgerMenu
+  // Animation variants
   const menuVariants = {
     hidden: {
       opacity: 0,
-      x: "100%",
+      y: "-100%",
     },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: "spring",
-        stiffness: 120,
-        damping: 10,
+        stiffness: 60,
+        damping: 12,
       },
     },
     exit: {
       opacity: 0,
-      x: "-100%",
+      y: "-100%",
       transition: {
         duration: 0.3,
       },
     },
   };
 
-  // linkVariants for desktop (applied to all the elements)
   const linkVariants = {
-    hidden: { opacity: 0, y: -50 },
+    hidden: { opacity: 0, x: -50 },
     visible: (i) => ({
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
         delay: i * 0.1, // Stagger the animation
         type: "spring",
-        stiffness: 250,
+        stiffness: 50,
       },
     }),
   };
@@ -78,14 +78,9 @@ const Header = () => {
     <>
       <div className="container mx-auto rounded px-1 py-3 font-Bebas flex items-center justify-between">
         {/*LOGO*/}
-        <motion.div
-          className="text-3xl sm:text-3xl md:text-3xl lg:text-3xl"
-          variants={linkVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div className="text-3xl sm:text-3xl md:text-3xl lg:text-3xl">
           S<span className="text-primaryColor">tudio.</span>
-        </motion.div>
+        </div>
 
         {/*DESKTOP NAV-LINKS*/}
         <div className="hidden md:block">
@@ -99,25 +94,20 @@ const Header = () => {
                 animate="visible"
                 custom={index}
               >
-                {link.name}
+                <Link to={link.url}>{link.name}</Link>
               </motion.li>
             ))}
           </ul>
         </div>
 
         {/*ICONS BUTTON*/}
-        <motion.div
-          className="flex justify-center items-center gap-1"
-          variants={linkVariants}
-          initial="hidden"
-          animate="visible "
-        >
-          {/*rendering icons here*/}
+        <div className="flex justify-center items-center gap-1">
+          {/*rendering icons*/}
           <CustomIconDesign icon={CiSearch} />
           <CustomIconDesign icon={CiShoppingCart} />
           {/*rendering button*/}
           <CustomButton buttonTitle={"Sign in"} />
-        </motion.div>
+        </div>
 
         {/*NAVIGATION HAMBURGER MENU ICON*/}
         <div onClick={toggleMenu} className="block md:hidden">
