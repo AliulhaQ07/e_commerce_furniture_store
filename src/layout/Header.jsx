@@ -128,7 +128,7 @@ const Header = () => {
             <ul className="container mx-auto flex flex-col justify-center items-start gap-2 py-2">
               {navLinks.map((link) => (
                 <li key={link.id} className="text-2xl">
-                  {link.name}
+                  <Link to={link.url}>{link.name}</Link>
                 </li>
               ))}
             </ul>

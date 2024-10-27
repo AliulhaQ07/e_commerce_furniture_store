@@ -8,6 +8,8 @@ import Sales from "./pages/Sales.jsx";
 import Contact from "./pages/Contact.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Home from "./pages/Home.jsx";
+import { DevSupport } from "@react-buddy/ide-toolbox";
+import { ComponentPreviews, useInitial } from "./dev/index.js";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,11 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <DevSupport
+      ComponentPreviews={ComponentPreviews}
+      useInitialHook={useInitial}
+    >
+      <RouterProvider router={router} />
+    </DevSupport>
   </StrictMode>,
 );
