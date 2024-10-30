@@ -5,15 +5,13 @@ import Footer from "./layout/Footer.jsx";
 import React from "react";
 
 function App() {
-  return (
-    <>
-      <div>
-        <Header />
-        <Body /> {/* This is where the routed pages will be rendered */}
-        <Footer />
-      </div>
-    </>
-  );
+  return (<>
+    <div >
+      <Header />
+      <Body /> {/* This is where the routed pages will be rendered */}
+      <Footer />
+    </div >
+  </>);
 }
 
 export default App;
