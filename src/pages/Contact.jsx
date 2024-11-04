@@ -8,7 +8,7 @@ import {IoTimeOutline} from "react-icons/io5";
 
 const Contact = () => {
   return (<div className = "container mx-auto min-h-screen font-Raleway px-4 py-6" >
-    {/* Header */}
+    {/* Header */}                                                                         3
     <div className = "flex items-center justify-center py-4 text-gray-800" >
       <p className = "text-4xl tracking-wider font-semibold" >CONTACT US</p >
       <p
