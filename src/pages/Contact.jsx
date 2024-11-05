@@ -15,6 +15,7 @@ const Contact = () => {
         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-gray-300 absolute -z-10 top-16">
         CONTACT US
       </p>
+
     </div>
 
     {/* Contact Section */}
